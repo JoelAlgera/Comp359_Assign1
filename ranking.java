@@ -6,9 +6,13 @@ public static void main(String[] args) {
     entries.add(new entry(1030, 1, "Algorithms, 4th Edition by Robert Sedgewick and Kevin Wayne", "Marcel dall'Agnol, Maryam Hedayati, Kevin Wayne", "COS 226", "Princeton University", 24));
     entries.add(new entry(1505, 3, "Tim Roughgarden, Algorithms Illuminated, Volumes I, II, and III", "Mary Wootters", "CS161", "Stanford University", 17));
     entries.add(new entry(439, 1, "Introduction to Algorithms by Cormen, Leiserson, Rivest, and Stein", "Erik Demaine, Srini Devadas, Nancy Lynch", "Design and Analysis of Algorithms", "MIT", 24));
-    //
-    //
-    entries.add(new entry(2000, 2, "Some Book", "Some Professor", "Some Course", "Some University", 20));
+    entries.add(new entry(1504, 1, "Algorithm Design by Jon Kleinberg and Éva Tardos", "Michael Kim", "CS 4820", "Cornell University", 41));
+    entries.add(new entry(310, 1, "Algorithms - Sanjoy Dasgupta, Christos H. Papadimitriou, and Umesh V. Vazirani", "Sanjam Garg, John Wright", "CS 170", "UC Berkley", 25));
+    entries.add(new entry(683, 1, " Algorithm Design by Jon Kleinberg and Éva Tardos", "Richard Anderson", "CSE 417", "University of Washington", 25));
+    entries.add(new entry(1307, 2, "Algorithm Design by Jon Kleinberg and Éva Tardos | Algorithms/Thomas H. Cormen, Charles E. Leiserson, Ronald L Rivest, Clifford Stein Introduction to Algorithms, Third Edition  2009 | Algorithms - Sanjoy Dasgupta, Christos H. Papadimitriou, and Umesh V. Vazirani ", "Shahrokh Shahi", "CS 161", "Georgia Tech", 18));
+    entries.add(new entry(236, 1, "Design and Analysis of Computer Algorithms, David M. Mount Department of Computer Science.", "David M. Mount", "CMSC 451", "U of Maryland", 21));
+    entries.add(new entry(308, 1, "Introduction to Algorithms, by Cormen, Leiserson, Rivest, and Stein", "Jelani Nelson", "CS 125", "Harvard", 24));
+    entries.add(new entry(965, 2, "1.\tData Structures, Algorithms, and Applications in C++, 2nd Edition, Sartaj Sahni | The art of Multiprocessor Programming by Maurice Herliky and Nir Shavit", "Yogesh Simmhan", "DS286", "Indian Institute of Science", 20));
     sort(entries);
 
 
@@ -56,7 +60,7 @@ class entry {
     }
 
     public String toString() {
-        return("courseRank: " + courseRank);
+        return("courseRank: " + courseRank + " | " + courseName + " at " + universityName);
         //return " (Rank: " + courseRank + "), Course: " + courseName + ", Professor: " + professorName + ", University: " + universityName +  ", Slides: " + slides + ", Textbooks: " + textbookCount;
     } 
 }
