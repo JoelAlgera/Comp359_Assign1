@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 public class ranking {
-public static void main(String[] args) {
-    ArrayList<entry> entries = new ArrayList<>();
+public static void main(String[] args) {    
+    ArrayList<entry> entries = new ArrayList<>(); //Create an array list to hold entries
+    //Add entries here, only relevant data is slide number, textbook count, and lecture count - The rest are for display purposes
     entries.add(new entry(1030, 1, "Algorithms, 4th Edition by Robert Sedgewick and Kevin Wayne", "Marcel dall'Agnol, Maryam Hedayati, Kevin Wayne", "COS 226", "Princeton University", 24));
     entries.add(new entry(1505, 3, "Tim Roughgarden, Algorithms Illuminated, Volumes I, II, and III", "Mary Wootters", "CS161", "Stanford University", 17));
     entries.add(new entry(439, 1, "Introduction to Algorithms by Cormen, Leiserson, Rivest, and Stein", "Erik Demaine, Srini Devadas, Nancy Lynch", "Design and Analysis of Algorithms", "MIT", 24));
@@ -13,15 +14,17 @@ public static void main(String[] args) {
     entries.add(new entry(236, 1, "Design and Analysis of Computer Algorithms, David M. Mount Department of Computer Science.", "David M. Mount", "CMSC 451", "U of Maryland", 21));
     entries.add(new entry(308, 1, "Introduction to Algorithms, by Cormen, Leiserson, Rivest, and Stein", "Jelani Nelson", "CS 125", "Harvard", 24));
     entries.add(new entry(965, 2, "1.\tData Structures, Algorithms, and Applications in C++, 2nd Edition, Sartaj Sahni | The art of Multiprocessor Programming by Maurice Herliky and Nir Shavit", "Yogesh Simmhan", "DS286", "Indian Institute of Science", 20));
+    
+    //Run insertion sort
     sort(entries);
 
-
+    //Print sorted entries in descending order to put highest rank first
     for (int i = 0; i < entries.size(); i++) {
         System.out.println(entries.get(entries.size()-i-1).toString());
     }
 
 }
-
+    //Insertion sort function to sort entries based on course rank
     static void sort(ArrayList<entry> list){
         int n = list.size();
         for (int i = 1; i < n; i++) {
@@ -38,6 +41,7 @@ public static void main(String[] args) {
     }
  
 
+    //Entry class to hold data for each course
 class entry {
     int slides;
     int textbookCount;
@@ -56,10 +60,12 @@ class entry {
         this.courseName = courseName;
         this.universityName = universityName;
         this.lectureCount = lectureCount;
+        // Calculate the course rank based on our equation
         this.courseRank = (int)((slides/lectureCount) * textbookCount);
     }
 
     public String toString() {
+        // Print out nice formatted version of relevant data
         return("courseRank: " + courseRank + " | " + courseName + " at " + universityName);
         //return " (Rank: " + courseRank + "), Course: " + courseName + ", Professor: " + professorName + ", University: " + universityName +  ", Slides: " + slides + ", Textbooks: " + textbookCount;
     } 
